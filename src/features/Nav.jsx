@@ -68,13 +68,13 @@ export function Nav() {
   );
 
   return (
-    <nav className="flex flex-wrap items-center justify-between px-44 py-8">
+    <nav className="flex flex-wrap items-center justify-between px-8 md:px-32 py-8">
       <a href="#" className="flex items-center">
-        <NikeLogo height={100} width={100} />
+        <NikeLogo className="h-16 w-16" />
       </a>
       {buttonBurger}
       {menuList}
-      <div className="cursor-pointer hidden md:flex justify-center items-center rounded-full h-14 w-14 bg-white shadow-sm ">
+      <div className="cursor-pointer hidden md:flex justify-center items-center rounded-full h-12 w-12 bg-white shadow-sm ">
         <TbShoppingBag size={15} />
       </div>
     </nav>
