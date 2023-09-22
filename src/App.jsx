@@ -1,19 +1,11 @@
 import { Nav } from "./features/Nav";
 import nikeShoeImg from "./assets/nike-big.png";
 
-/*
-
-  
-
-  */
 function App() {
   const currentShoe = (
     <div className="hidden xl:block -mt-52   flex-[3.9] z-[-1]  ">
       <div className=" h-[100%] w-[100%] bg-gradient-to-br from-[#F637CF] from-5% via-[#E3D876] via-40% to-[#4CC4C6] to-90%" />
-      <img
-        src={nikeShoeImg}
-        className="hidden lg:block absolute -mt-[30%] w-[40%] -ml-24 "
-      />
+      <img src={nikeShoeImg} className=" absolute -mt-[35%] w-[40%] -ml-24 " />
     </div>
   );
 
@@ -51,6 +43,5 @@ function App() {
     </div>
   );
 }
-//
 
 export default App;
