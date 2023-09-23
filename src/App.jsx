@@ -3,26 +3,27 @@ import nikeShoeImg from "./assets/nike-big.png";
 
 function App() {
   const currentShoe = (
-    <div className="hidden xl:block -mt-52   flex-[3.9] z-[-1]  ">
-      <div className=" h-[100%] w-[100%] bg-gradient-to-br from-[#F637CF] from-5% via-[#E3D876] via-40% to-[#4CC4C6] to-90%" />
-      <img src={nikeShoeImg} className=" absolute -mt-[35%] w-[40%] -ml-24 " />
+    <div className="lg:-mt-52 flex-1 z-[-1]  ">
+      <div className="flex justify-center items-center h-[100%]  w-[100%] bg-gradient-to-br from-[#F637CF] from-5% via-[#E3D876] via-40% to-[#4CC4C6] to-90%">
+        <img src={nikeShoeImg} />
+      </div>
     </div>
   );
 
-  const leftBloc = (
-    <div className="pl-32  flex-[4.3] space-y-8 mt-10">
-      <div className="font-black text-9xl">
+  const descriptionBloc = (
+    <div className=" flex-[0.98] space-y-8 mt-10">
+      <div className="font-black text-5xl md:text-9xl">
         Nike Air
         <br />
         Max 270
       </div>
-      <div className="font-medium text-xl ">
+      <div className="font-medium text-md md:text-xl ">
         {"Nike's Ist lifestyle Air Max returns with a vibrant color gradient"}
         <br />
         {"that's sure to turn heads."}
       </div>
       <div className="">
-        <div className="text-4xl font-extrabold">160 $</div>
+        <div className="text-xl md:text-4xl font-extrabold">160 $</div>
       </div>
       <div>
         <button className="hover:bg-gray-900 active:bg-gray-700 flex justify-center items-center h-14 w-44 bg-black text-white">
@@ -32,12 +33,12 @@ function App() {
     </div>
   );
   return (
-    <div className="">
-      <div className="px-8 lg:px-32 py-8">
+    <div className="p-8">
+      <div className="lg:px-32 ">
         <Nav />
       </div>
-      <div className="flex">
-        {leftBloc}
+      <div className="lg:pl-32 lg:mt-20 flex lg:flex-row flex-col-reverse   ">
+        {descriptionBloc}
         {currentShoe}
       </div>
     </div>
