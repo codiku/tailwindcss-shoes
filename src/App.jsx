@@ -7,7 +7,7 @@ import nike2 from "./assets/nike2.png";
 import nike3 from "./assets/nike3.png";
 function App() {
   const shoeImage = (
-    <div className=" flex justify-center items-center h-[100%]   bg-gradient-to-br from-[#F637CF] from-5% via-[#E3D876] via-40% to-[#4CC4C6] to-90%">
+    <div className=" flex justify-center items-center h-[100%] bg-gradient-to-br from-[#F637CF] from-5% via-[#E3D876] via-40% to-[#4CC4C6] to-90%">
       <img className="animate-float " src={nikeShoeImg} />
     </div>
   );
@@ -53,9 +53,9 @@ function App() {
       </div>
       {/*flex items-center justify-between flex-col xl:flex-row*/}
       <div className="flex flex-wrap mt-10 gap-8 justify-between">
-        <Card src={nike1} bgColor="bg-[#EEFFA4]" title="Nike Mid Blazer" />
-        <Card src={nike2} bgColor="bg-[#DDCEFD]" title="Nike Fly Zoom" />
-        <Card src={nike3} bgColor="bg-[#DAFFA2]" title="Nike Air Max" />
+        <Card src={nike1} bgColor="bg-paleYellow" title="Nike Mid Blazer" />
+        <Card src={nike2} bgColor="bg-lavender" title="Nike Fly Zoom" />
+        <Card src={nike3} bgColor="bg-paleGreen" title="Nike Air Max" />
       </div>
     </>
   );
