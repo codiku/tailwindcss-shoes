@@ -7,8 +7,8 @@ import nike2 from "./assets/nike2.png";
 import nike3 from "./assets/nike3.png";
 function App() {
   const shoeImage = (
-    <div className="flex justify-center items-center h-[100%]   bg-gradient-to-br from-[#F637CF] from-5% via-[#E3D876] via-40% to-[#4CC4C6] to-90%">
-      <img src={nikeShoeImg} />
+    <div className=" flex justify-center items-center h-[100%]   bg-gradient-to-br from-[#F637CF] from-5% via-[#E3D876] via-40% to-[#4CC4C6] to-90%">
+      <img className="animate-float " src={nikeShoeImg} />
     </div>
   );
 
@@ -33,9 +33,10 @@ function App() {
         />
       </div>
       <div className="flex items-center space-x-10">
-        <button className="hover:bg-gray-900 active:bg-gray-700 flex justify-center items-center h-14 w-44 bg-black text-white">
+        <button className="transform active:scale-75 transition-transform hover:bg-gray-900 active:bg-gray-700 flex justify-center items-center h-14 w-44 bg-black text-white">
           Add to bag
         </button>
+
         <a href="#" className=" underline font-bold text-lg underline-offset-4">
           View details
         </a>
