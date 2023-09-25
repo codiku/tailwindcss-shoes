@@ -17,10 +17,11 @@ export function Nav() {
   );
 
   const menuList = (
+    // lg:pl-8 to counter the mr-8 on the shopping button
     <div
       className={`${
         showMobileMenu ? "block" : "hidden"
-      }  lg:block w-full lg:w-auto`}
+      }  lg:block w-full lg:w-auto lg:pl-8`}
     >
       <ul className="text-lg flex flex-col p-4 lg:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 lg:flex-row lg:space-x-8 lg:mt-0 lg:border-0 lg:bg-transparent dark:bg-gray-800 lg:dark:bg-gray-900 dark:border-gray-700">
         <li>
@@ -70,7 +71,7 @@ export function Nav() {
   );
 
   const buttonShoping = (
-    <div className="cursor-pointer hidden lg:flex justify-center items-center rounded-full h-12 w-12 bg-white shadow-sm ">
+    <div className="mr-8 cursor-pointer hidden lg:flex justify-center items-center rounded-full h-12 w-12 bg-white shadow-sm ">
       <TbShoppingBag size={15} />
     </div>
   );

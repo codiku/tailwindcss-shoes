@@ -6,16 +6,14 @@ import nike1 from "./assets/nike1.png";
 import nike2 from "./assets/nike2.png";
 import nike3 from "./assets/nike3.png";
 function App() {
-  const showImage = (
-    <div className="lg:-mt-52 flex-1 z-[-1]  ">
-      <div className="flex justify-center items-center h-[100%]  w-[100%] bg-gradient-to-br from-[#F637CF] from-5% via-[#E3D876] via-40% to-[#4CC4C6] to-90%">
-        <img src={nikeShoeImg} />
-      </div>
+  const shoeImage = (
+    <div className="flex justify-center items-center h-[100%]   bg-gradient-to-br from-[#F637CF] from-5% via-[#E3D876] via-40% to-[#4CC4C6] to-90%">
+      <img src={nikeShoeImg} />
     </div>
   );
 
   const shoeDetail = (
-    <div className=" flex-[0.98] space-y-8 mt-10 lg:mt-0 ">
+    <>
       <div className="font-black text-5xl md:text-9xl">
         Nike Air
         <br />
@@ -42,32 +40,32 @@ function App() {
           View details
         </a>
       </div>
-    </div>
+    </>
   );
 
   const listSection = (
-    <div className="lg:px-32">
+    <>
       <div className="flex flex-col items-center justify-center mt-20 ">
         <div className="bg-[url('./assets/lines.png')] bg-[length:500px_40px] bg-center bg-no-repeat text-5xl font-extrabold">
           NEW ARRIVALS
         </div>
       </div>
-      <div className="flex items-center justify-between flex-col md:flex-row  gap-4 mt-10">
+      {/*flex items-center justify-between flex-col xl:flex-row*/}
+      <div className="flex flex-wrap mt-10 gap-8 justify-between">
         <Card src={nike1} bgColor="bg-[#EEFFA4]" title="Nike Mid Blazer" />
         <Card src={nike2} bgColor="bg-[#DDCEFD]" title="Nike Fly Zoom" />
         <Card src={nike3} bgColor="bg-[#DAFFA2]" title="Nike Air Max" />
       </div>
-    </div>
+    </>
   );
 
   return (
-    <div className="p-8">
-      <div className="lg:px-32 ">
-        <Nav />
-      </div>
-      <div className="lg:pl-32 lg:mt-5 flex lg:flex-row flex-col-reverse">
-        {shoeDetail}
-        {showImage}
+    <div className="px-8 lg:px-24">
+      <Nav />
+      <div className=" lg:mt-5 flex lg:flex-row flex-col-reverse">
+        <div className=" flex-1 space-y-8 mt-10 lg:mt-0 ">{shoeDetail}</div>
+        {/* ml-28 to make it align with the menu */}
+        <div className="lg:-mt-52 flex-1 z-[-1] lg:ml-28">{shoeImage}</div>
       </div>
       {listSection}
     </div>
