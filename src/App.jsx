@@ -1,12 +1,19 @@
-import { Nav } from "./features/Nav";
+import { Nav } from "./components/Nav";
 import nikeShoeImg from "./assets/nike-big.png";
 import { Select } from "./components/Select";
 import { Card } from "./components/Card";
 import nike1 from "./assets/nike1.png";
 import nike2 from "./assets/nike2.png";
 import nike3 from "./assets/nike3.png";
+
+const SHOE_LIST = [
+  { id: 1, src: nike1, bgColor: "bg-paleYellow", title: "Nike Mid Blazer" },
+  { id: 2, src: nike2, bgColor: "bg-lavender", title: "Nike Air Max 270" },
+  { id: 3, src: nike3, bgColor: "bg-paleGreen", title: "Nike Air Max 2090" },
+];
+
 function App() {
-  const shoeImage = (
+  const bigShoeImage = (
     <div className=" flex justify-center items-center h-[100%] bg-gradient-to-br from-[#F637CF] from-5% via-[#E3D876] via-40% to-[#4CC4C6] to-90%">
       <img className="animate-float " src={nikeShoeImg} />
     </div>
@@ -53,9 +60,14 @@ function App() {
       </div>
       {/*flex items-center justify-between flex-col xl:flex-row*/}
       <div className="flex flex-wrap mt-10 gap-8 justify-between">
-        <Card src={nike1} bgColor="bg-paleYellow" title="Nike Mid Blazer" />
-        <Card src={nike2} bgColor="bg-lavender" title="Nike Fly Zoom" />
-        <Card src={nike3} bgColor="bg-paleGreen" title="Nike Air Max" />
+        {SHOE_LIST.map((shoe) => (
+          <Card
+            key={shoe.id}
+            title={shoe.title}
+            src={shoe.src}
+            bgColor={shoe.bgColor}
+          />
+        ))}
       </div>
     </>
   );
@@ -66,7 +78,7 @@ function App() {
       <div className=" lg:mt-5 flex lg:flex-row flex-col-reverse">
         <div className=" flex-1 space-y-8 mt-10 lg:mt-0 ">{shoeDetail}</div>
         {/* ml-28 to make it align with the menu */}
-        <div className="lg:-mt-52 flex-1 z-[-1] lg:ml-28">{shoeImage}</div>
+        <div className="lg:-mt-52 flex-1 z-[-1] lg:ml-28">{bigShoeImage}</div>
       </div>
       {listSection}
     </div>
