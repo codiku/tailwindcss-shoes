@@ -39,7 +39,7 @@ const SHOE_LIST = [
   {
     id: 4,
     src: nike4,
-    bgColor: "bg-paleYellow",
+    bgColor: "bg-[#FCC4EA]",
     title: "Nike Air Blazer",
     description:
       "The Nike Air Blazer is a classic shoe that's perfect for any casual occasion. It's the perfect shoe for any laid-back individual.",
@@ -95,7 +95,7 @@ function App() {
       </div>
       {/*flex items-center justify-between flex-col xl:flex-row*/}
 
-      <div className="justify-between grid grid-cols-1 md:grid-cols-2 xl:grid-cols-[repeat(3,25%)] gap-12 lg:gap-6 mt-10">
+      <div className="justify-between grid grid-cols-1 md:grid-cols-2 xl:grid-cols-[repeat(3,25%)] gap-y-24 gap-x-6 mt-10">
         {SHOE_LIST.map((shoe) => (
           <Card onClick={setCurrShoe} key={shoe.id} shoe={shoe} />
         ))}
