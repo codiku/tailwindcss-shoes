@@ -1,5 +1,4 @@
 import { Nav } from "./components/Nav";
-
 import { useState } from "react";
 import { SHOE_LIST } from "./constant";
 import { NewArrivalSection } from "./features/NewArrivalSection";
