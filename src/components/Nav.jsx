@@ -82,7 +82,7 @@ export function Nav() {
   );
 
   return (
-    <nav className="flex flex-wrap items-center justify-between z-10">
+    <nav className="flex flex-wrap items-center justify-between">
       {logoLink}
       {buttonBurger}
       {menuList}

@@ -2,7 +2,7 @@ import { Select } from "../components/Select";
 
 export const ShoeDetail = ({ shoe }) => {
   const shoeImage = (
-    <div className=" flex justify-center items-center h-[100%] bg-gradient-to-br from-[#F637CF] from-5% via-[#E3D876] via-40% to-[#4CC4C6] to-90%">
+    <div className="relative -z-10 flex justify-center items-center h-[100%] bg-gradient-to-br from-[#F637CF] from-5% via-[#E3D876] via-40% to-[#4CC4C6] to-90%">
       <img className="animate-float " src={shoe.src} />
     </div>
   );
@@ -35,9 +35,9 @@ export const ShoeDetail = ({ shoe }) => {
 
   return (
     <>
-      <div className=" flex-1 space-y-8 mt-10 lg:mt-0 ">{shoeDescription}</div>
+      <div className="flex-1 space-y-8 mt-10 lg:mt-0 ">{shoeDescription}</div>
       {/* ml-28 to make it align with the menu */}
-      <div className="lg:-mt-52 flex-1 z-[-1] lg:ml-28">{shoeImage}</div>
+      <div className="lg:-mt-52 flex-1  lg:ml-28">{shoeImage}</div>
     </>
   );
 };
