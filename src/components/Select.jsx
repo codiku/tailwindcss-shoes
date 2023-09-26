@@ -5,7 +5,7 @@ export function Select(p) {
     <div className="relative">
       <select
         defaultValue=""
-        className="w-24 h-14 appearance-none  bg-white border border-gray-300  p-4  focus:border-gray-500"
+        className="w-24 h-14 appearance-none bg-white border border-gray-300  p-4  focus:border-gray-500"
       >
         <option value="" hidden disabled>
           {p.title}

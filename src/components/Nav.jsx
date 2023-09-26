@@ -5,12 +5,11 @@ import NikeLogo from "../assets/nike-logo.svg?react";
 
 export function Nav() {
   const [showMobileMenu, setShowMobileMenu] = useState(false);
-
   const buttonBurger = (
     <button
       onClick={() => setShowMobileMenu((prev) => !prev)}
       type="button"
-      className="anim-click p-2 w-10 h-10 text-sm text-gray-500 rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600 "
+      className=" anim-click p-2 w-10 h-10 text-sm text-gray-500 rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600 "
     >
       <RxHamburgerMenu size={"auto"} />
     </button>
@@ -19,9 +18,9 @@ export function Nav() {
   const menuList = (
     // lg:pl-8 to counter the mr-8 on the shopping button
     <div
-      className={`${
-        showMobileMenu ? "block" : "hidden"
-      }  lg:block w-full lg:w-auto lg:pl-8`}
+      className={` ${
+        !showMobileMenu && "hidden"
+      } lg:block w-full lg:w-auto lg:pl-8 mb-5`}
     >
       <ul className="text-lg flex flex-col p-4 lg:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 lg:flex-row lg:space-x-8 lg:mt-0 lg:border-0 lg:bg-transparent dark:bg-gray-800 lg:dark:bg-gray-900 dark:border-gray-700">
         <li>

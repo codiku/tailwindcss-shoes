@@ -21,7 +21,7 @@ function App() {
 
   const shoeDetail = (
     <>
-      <div className="font-black text-5xl md:text-9xl">
+      <div className="pulse font-black text-5xl md:text-9xl">
         Nike Air
         <br />
         Max 270
@@ -69,7 +69,7 @@ function App() {
   );
 
   return (
-    <div className="px-4  lg:px-8 xl:px-24">
+    <div className="animate-fadeIn 1000 px-4  lg:px-8 xl:px-24">
       <Nav />
       <div className=" lg:mt-5 flex lg:flex-row flex-col-reverse">
         <div className=" flex-1 space-y-8 mt-10 lg:mt-0 ">{shoeDetail}</div>

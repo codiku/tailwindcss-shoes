@@ -13,9 +13,14 @@ export default {
           "0%, 100%": { transform: "translateY(0)" },
           "50%": { transform: "translateY(-10px)" }, // Adjust the floating height as needed
         },
+        fadeIn: {
+          "0%": { opacity: "0" },
+          "100%": { opacity: "1" },
+        },
       },
       animation: {
         float: "float 4s infinite", // Adjust the duration as needed
+        fadeIn: "fadeIn 1s ease-in-out ",
       },
     },
   },
