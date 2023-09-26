@@ -1,7 +1,7 @@
 export function Card(p) {
   return (
     <div
-      className={`${p.bgColor} cursor-pointer transform transition duration-500 hover:scale-110`}
+      className={` ${p.bgColor} cursor-pointer transition transform hover:scale-110 active:scale-95`}
     >
       <div className="p-8 ">
         <div className="font-bold text-2xl">{p.title}</div>

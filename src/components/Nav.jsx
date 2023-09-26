@@ -10,7 +10,7 @@ export function Nav() {
     <button
       onClick={() => setShowMobileMenu((prev) => !prev)}
       type="button"
-      className=" p-2 w-10 h-10 text-sm text-gray-500 rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+      className="anim-click p-2 w-10 h-10 text-sm text-gray-500 rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600 "
     >
       <RxHamburgerMenu size={"auto"} />
     </button>
@@ -71,7 +71,7 @@ export function Nav() {
   );
 
   const buttonShoping = (
-    <div className="mr-8 cursor-pointer hidden lg:flex justify-center items-center rounded-full h-12 w-12 bg-white shadow-sm ">
+    <div className="anim-click mr-8 cursor-pointer hidden lg:flex justify-center items-center rounded-full h-12 w-12 bg-white shadow-sm ">
       <TbShoppingBag size={15} />
     </div>
   );

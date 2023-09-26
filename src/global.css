@@ -5,3 +5,9 @@
 body {
   font-family: "Nunito Sans Variable", sans-serif;
 }
+
+@layer components {
+  .anim-click {
+    @apply transition transform active:scale-75;
+  }
+}
