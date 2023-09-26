@@ -62,12 +62,7 @@ function App() {
 
       <div className="justify-between grid grid-cols-1 md:grid-cols-2 xl:grid-cols-[repeat(3,25%)] gap-8 mt-10">
         {SHOE_LIST.map((shoe) => (
-          <Card
-            key={shoe.id}
-            title={shoe.title}
-            src={shoe.src}
-            bgColor={shoe.bgColor}
-          />
+          <Card key={shoe.id} shoe={shoe} />
         ))}
       </div>
     </>

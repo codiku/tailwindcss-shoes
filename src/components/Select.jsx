@@ -3,8 +3,11 @@ import { IoIosArrowDown } from "react-icons/io";
 export function Select(p) {
   return (
     <div className="relative">
-      <select className="w-24 h-14 appearance-none  bg-white border border-gray-300  p-4  focus:border-gray-500">
-        <option value="" selected hidden disabled>
+      <select
+        defaultValue=""
+        className="w-24 h-14 appearance-none  bg-white border border-gray-300  p-4  focus:border-gray-500"
+      >
+        <option value="" hidden disabled>
           {p.title}
         </option>
         {p.options.map((option) => (
