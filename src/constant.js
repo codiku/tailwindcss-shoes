@@ -28,7 +28,7 @@ export const SHOE_LIST = [
     bgColor: "bg-paleGreen",
     title: "Nike Air Max 2090",
     description:
-      "The Nike Air Max 2090 is a futuristic shoe that's both stylish and comfortable. It's the perfect shoe for any fashion-forward individual.",
+      "The Nike Air Max 2090 is shoe that's both stylish and comfortable. It's the perfect shoe for any fashion-forward individual.",
     price: 150,
   },
   {

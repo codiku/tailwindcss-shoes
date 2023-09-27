@@ -8,6 +8,9 @@ body {
 
 @layer components {
   .anim-click {
-    @apply transition transform active:scale-75;
+    @apply transform transition active:scale-75;
+  }
+  .flex-center {
+    @apply flex items-center justify-center;
   }
 }
