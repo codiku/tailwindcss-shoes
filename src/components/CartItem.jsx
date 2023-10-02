@@ -6,7 +6,7 @@ export const CartItem = ({
   onClickTrash,
 }) => {
   return (
-    <div className=" flex justify-between p-3 hover:bg-paleYellow">
+    <div className="flex cursor-pointer justify-between p-3 hover:bg-paleYellow">
       <img className="mt-1 h-24 bg-gray-50 " src={product.src} />
       <div className="w-72 space-y-2">
         <div className="font-bold">{product.title}</div>
