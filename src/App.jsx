@@ -1,10 +1,10 @@
-import { Nav } from "./components/Nav";
 import { useEffect, useState } from "react";
-import { SHOE_LIST } from "./constant";
+import { Cart } from "./components/Cart";
+import { Nav } from "./components/Nav";
 import { NewArrivalSection } from "./components/NewArrivalSection";
 import { ShoeDetail } from "./components/ShoeDetail";
 import { Sidebar } from "./components/Sidebar";
-import { Cart } from "./components/Cart";
+import { SHOE_LIST } from "./constant";
 
 function App() {
   const [currShoe, setCurrShoe] = useState(SHOE_LIST[0]);
@@ -33,28 +33,25 @@ function App() {
   };
 
   const addToCart = (product, qty, size) => {
-    if (qty && size) {
-      const existingItemIndex = cartItems.findIndex(
-        (c) => c.product.id === product.id,
-      );
-      const updateCartItems = [...cartItems];
-      if (existingItemIndex > -1) {
-        updateCartItems[existingItemIndex].qty = qty;
-        updateCartItems[existingItemIndex].size = size;
-      } else {
-        updateCartItems.push({ product, qty: qty, size: size });
-      }
-      setCartItems(updateCartItems);
+    const existingItemIndex = cartItems.findIndex(
+      (c) => c.product.id === product.id,
+    );
+    const updateCartItems = [...cartItems];
+    if (existingItemIndex > -1) {
+      updateCartItems[existingItemIndex].qty = qty;
+      updateCartItems[existingItemIndex].size = size;
     } else {
-      alert("Select a size and quantity");
+      updateCartItems.push({ product, qty: qty, size: size });
     }
+    setCartItems(updateCartItems);
   };
 
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);
   };
+
   return (
-    <div className="1000 animate-fadeIn p-4  lg:px-8 xl:px-24  ">
+    <div className="1000 animate-fadeIn p-8 dark:bg-night  xl:px-24">
       <Nav onClickShoppingBtn={toggleSidebar} cartItems={cartItems} />
       <Sidebar onClickClose={toggleSidebar} isOpen={isSidebarOpen}>
         <Cart cartItems={cartItems} onClickTrash={removeFromCart} />

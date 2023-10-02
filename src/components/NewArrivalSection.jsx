@@ -1,10 +1,10 @@
-import { Card } from "./Card";
 import { SHOE_LIST } from "../constant";
+import { Card } from "./Card";
 
 export const NewArrivalSection = ({ onClickCard }) => {
   return (
     <>
-      <div className="flex-center  mt-20 flex-col">
+      <div className="flex-center  mt-20 flex-col dark:text-white">
         <div className="bg-[url('./assets/lines.png')] bg-[length:500px_40px] bg-center bg-no-repeat text-5xl font-extrabold">
           NEW ARRIVALS
         </div>

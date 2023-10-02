@@ -1,12 +1,23 @@
-import { TbShoppingBag } from "react-icons/tb";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { BiMoon, BiSun } from "react-icons/bi";
 import { RxHamburgerMenu } from "react-icons/rx";
+import { TbShoppingBag } from "react-icons/tb";
 import NikeLogo from "../assets/nike-logo.svg?react";
 
 const ROUTES = ["Home", "About", "Services", "Pricing", "Contact"];
 
 export function Nav({ onClickShoppingBtn, cartItems }) {
+  const [theme, setTheme] = useState();
   const [showMobileMenu, setShowMobileMenu] = useState(false);
+
+  useEffect(function loadThemeMode() {
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme) {
+      document.documentElement.classList.add(savedTheme);
+      setTheme(savedTheme);
+    }
+  }, []);
+
   const buttonBurger = (
     <button
       onClick={() => setShowMobileMenu((prev) => !prev)}
@@ -22,11 +33,11 @@ export function Nav({ onClickShoppingBtn, cartItems }) {
     <div
       className={` ${
         !showMobileMenu && "hidden"
-      } mb-5 w-full lg:block lg:w-auto lg:pl-8`}
+      } mb-5 w-full  lg:block lg:w-auto lg:pl-8`}
     >
-      <ul className="mt-4 flex flex-col rounded-lg border border-gray-100 bg-gray-50 p-4 text-lg dark:border-gray-700 dark:bg-gray-800 lg:mt-0 lg:flex-row lg:space-x-8 lg:border-0 lg:bg-transparent lg:p-0 lg:dark:bg-gray-900">
+      <ul className="mt-4 flex flex-col rounded-lg border border-gray-100 bg-gray-50 p-4 text-lg dark:border-gray-700 dark:bg-gray-800 lg:mt-0 lg:flex-row lg:space-x-8 lg:border-0 lg:bg-transparent lg:p-0 lg:dark:bg-night-50">
         {ROUTES.map((route, i) => (
-          <li key={route}>
+          <li key={route} className="px-5 py-1">
             <a
               href="#"
               className={`${
@@ -70,16 +81,43 @@ export function Nav({ onClickShoppingBtn, cartItems }) {
 
   const logoLink = (
     <a href="#" className="flex items-center">
-      <NikeLogo className="h-20 w-20" />
+      <NikeLogo
+        className="h-20 w-20"
+        fill={theme === "dark" ? "white" : "black"}
+      />
     </a>
   );
 
+  const toggleThemeMode = () => {
+    if (
+      localStorage.getItem("theme") !== "dark" ||
+      window.matchMedia("(prefers-color-scheme: dark)").matches
+    ) {
+      localStorage.setItem("theme", "dark");
+      document.documentElement.classList.add("dark");
+      setTheme("dark");
+    } else {
+      localStorage.setItem("theme", "light");
+      document.documentElement.classList.remove("dark");
+      setTheme("light");
+    }
+
+    // Whenever the user explicitly chooses to respect the OS preference
+  };
   return (
     <nav className="relative z-20 flex flex-wrap items-center justify-between">
       {logoLink}
       {buttonBurger}
       {menuList}
       {buttonShopping}
+      <div className="fixed bottom-4 right-4">
+        <button
+          onClick={toggleThemeMode}
+          className="rounded-full bg-night px-4 py-2 font-semibold text-white shadow-lg  dark:bg-white dark:text-night"
+        >
+          {!theme || theme === "light" ? <BiMoon /> : <BiSun />}
+        </button>
+      </div>
     </nav>
   );
 }

@@ -10,7 +10,10 @@ export function Card({ shoe, onClick }) {
           SHOP NOW +
         </div>
       </div>
-      <img className="absolute inset-x-[40%] inset-y-4 w-56 " src={shoe.src} />
+      <img
+        className="absolute inset-x-[40%] inset-y-4 h-40 w-56 "
+        src={shoe.src}
+      />
     </div>
   );
 }
