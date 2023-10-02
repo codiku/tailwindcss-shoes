@@ -5,7 +5,7 @@ import NikeLogo from "../assets/nike-logo.svg?react";
 
 const ROUTES = ["Home", "About", "Services", "Pricing", "Contact"];
 
-export function Nav({ onClickShoppingBtn, cart }) {
+export function Nav({ onClickShoppingBtn, cartItems }) {
   const [showMobileMenu, setShowMobileMenu] = useState(false);
   const buttonBurger = (
     <button
@@ -29,10 +29,14 @@ export function Nav({ onClickShoppingBtn, cart }) {
           <li key={route}>
             <a
               href="#"
-              className={`block py-2 pl-3 pr-4 text-${
-                i > 2 ? "white" : "black"
-              } rounded hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:border-0 lg:p-0 lg:hover:bg-transparent lg:hover:text-blue-700 lg:dark:hover:bg-transparent lg:dark:hover:text-blue-500`}
-              aria-current="page"
+              className={`${
+                i == 0 && "bg-blue-500 text-white lg:bg-transparent"
+              } block py-2 pl-3 pr-4 text-black ${
+                i > 2 ? "lg:text-white" : "lg:text-black"
+              } rounded ${
+                i > 0 && "hover:bg-gray-100 lg:hover:bg-transparent"
+              } dark:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:border-0 lg:p-0 
+              lg:hover:text-blue-700 lg:dark:hover:bg-transparent lg:dark:hover:text-blue-500`}
             >
               {route}
             </a>
@@ -47,7 +51,7 @@ export function Nav({ onClickShoppingBtn, cart }) {
       <span className="relative flex h-6 w-6">
         <span className="opacity-65 absolute inline-flex h-full w-full animate-ping rounded-full bg-sky-400"></span>
         <span className="flex-center relative inline-flex h-6 w-6 rounded-full bg-sky-500 text-white">
-          {cart.length}
+          {cartItems.length}
         </span>
       </span>
     </div>
@@ -57,9 +61,9 @@ export function Nav({ onClickShoppingBtn, cart }) {
       onClick={onClickShoppingBtn}
       className="mr-8 hidden h-12 w-12 lg:block"
     >
-      <div className="anim-click flex-center h-full w-full cursor-pointer rounded-full rounded-full bg-white shadow-sm ">
+      <div className="anim-click flex-center h-full w-full cursor-pointer rounded-full bg-white shadow-sm ">
         <TbShoppingBag size={15} />
-        {cart.length > 0 && ping}
+        {cartItems.length > 0 && ping}
       </div>
     </div>
   );

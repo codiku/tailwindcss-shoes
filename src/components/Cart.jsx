@@ -1,13 +1,16 @@
 import { CartItem } from "./CartItem";
 
-export const Cart = ({ cart, onClickTrash }) => {
+export const Cart = ({ cartItems, onClickTrash }) => {
   return (
     <>
       <h2 className="text-4xl font-bold">Cart</h2>
       <ul className="mt-5 space-y-5">
-        {cart.map((shoe, i) => (
+        {cartItems.map((cartItem, i) => (
           <li key={i}>
-            <CartItem shoe={shoe} onClickTrash={() => onClickTrash(i)} />
+            <CartItem
+              cartItem={cartItem}
+              onClickTrash={() => onClickTrash(i)}
+            />
           </li>
         ))}
       </ul>

@@ -1,6 +1,11 @@
-import { Select } from "../components/ui/Select";
+import { useRef } from "react";
+import { Select } from "../components/Select";
+import { QTY, SIZES } from "../constant";
 
-export const ShoeDetail = ({ shoe, onClickAddShoe }) => {
+export const ShoeDetail = ({ shoe, onClickAdd }) => {
+  const qtyRef = useRef();
+  const sizeRef = useRef();
+
   const shoeImage = (
     <div className="flex-center relative  -z-10 h-[100%] bg-gradient-to-br from-[#F637CF] from-5% via-[#E3D876] via-40% to-[#4CC4C6] to-90%">
       <img className="animate-float " src={shoe.src} />
@@ -15,15 +20,20 @@ export const ShoeDetail = ({ shoe, onClickAddShoe }) => {
         <div className="text-3xl font-extrabold md:text-6xl">
           {shoe.price} $
         </div>
-        <Select title="QTY" options={["1", "2", "3", "4"]} />
         <Select
+          onChange={(qty) => (qtyRef.current = qty)}
+          title="QTY"
+          options={QTY}
+        />
+        <Select
+          onChange={(size) => (sizeRef.current = size)}
           title="SIZE"
-          options={["41", "42", "43", "44", "45", "46", "47"]}
+          options={SIZES}
         />
       </div>
       <div className="flex items-center space-x-10">
         <button
-          onClick={() => onClickAddShoe(shoe)}
+          onClick={() => onClickAdd(shoe, qtyRef.current, sizeRef.current)}
           className="anim-click flex-center h-14 w-44  bg-black text-white hover:bg-gray-900  active:bg-gray-700"
         >
           Add to bag

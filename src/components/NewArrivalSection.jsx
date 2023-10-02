@@ -1,4 +1,4 @@
-import { Card } from "./ui/Card";
+import { Card } from "./Card";
 import { SHOE_LIST } from "../constant";
 
 export const NewArrivalSection = ({ onClickCard }) => {

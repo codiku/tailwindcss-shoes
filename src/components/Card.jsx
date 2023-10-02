@@ -2,7 +2,7 @@ export function Card({ shoe, onClick }) {
   return (
     <div
       onClick={() => onClick(shoe)}
-      className={`${shoe.bgColor} transform cursor-pointer transition hover:scale-110 active:scale-95`}
+      className={`${shoe.bgColor} transform cursor-pointer transition hover:scale-105`}
     >
       <div className="p-8 ">
         <div className="text-2xl font-bold">{shoe.title}</div>

@@ -2,14 +2,15 @@ import { Nav } from "./components/Nav";
 import { useEffect, useState } from "react";
 import { SHOE_LIST } from "./constant";
 import { NewArrivalSection } from "./components/NewArrivalSection";
-import { ShoeDetail } from "./components//ShoeDetail";
-import { Sidebar } from "./components/ui/Sidebar";
+import { ShoeDetail } from "./components/ShoeDetail";
+import { Sidebar } from "./components/Sidebar";
 import { Cart } from "./components/Cart";
 
 function App() {
   const [currShoe, setCurrShoe] = useState(SHOE_LIST[0]);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-  const [shoesInCart, setShoesInCart] = useState([]);
+  const [cartItems, setCartItems] = useState([]);
+
   useEffect(
     function closeSidebarListener() {
       const handleEscapeKey = (event) => {
@@ -26,24 +27,40 @@ function App() {
   );
 
   const removeFromCart = (shoeIndex) => {
-    const updatedShoesInCart = [...shoesInCart];
-    updatedShoesInCart.splice(shoeIndex, 1);
-    setShoesInCart(updatedShoesInCart);
+    const updatedCartItems = [...cartItems];
+    updatedCartItems.splice(shoeIndex, 1);
+    setCartItems(updatedCartItems);
   };
+
+  const addToCart = (product, qty, size) => {
+    if (qty && size) {
+      const existingItemIndex = cartItems.findIndex(
+        (c) => c.product.id === product.id,
+      );
+      const updateCartItems = [...cartItems];
+      if (existingItemIndex > -1) {
+        updateCartItems[existingItemIndex].qty = qty;
+        updateCartItems[existingItemIndex].size = size;
+      } else {
+        updateCartItems.push({ product, qty: qty, size: size });
+      }
+      setCartItems(updateCartItems);
+    } else {
+      alert("Select a size and quantity");
+    }
+  };
+
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);
   };
   return (
     <div className="1000 animate-fadeIn p-4  lg:px-8 xl:px-24  ">
-      <Nav onClickShoppingBtn={toggleSidebar} cart={shoesInCart} />
+      <Nav onClickShoppingBtn={toggleSidebar} cartItems={cartItems} />
       <Sidebar onClickClose={toggleSidebar} isOpen={isSidebarOpen}>
-        <Cart cart={shoesInCart} onClickTrash={removeFromCart} />
+        <Cart cartItems={cartItems} onClickTrash={removeFromCart} />
       </Sidebar>
       <div className="flex flex-col-reverse lg:mt-5 lg:flex-row">
-        <ShoeDetail
-          shoe={currShoe}
-          onClickAddShoe={(shoe) => setShoesInCart([...shoesInCart, shoe])}
-        />
+        <ShoeDetail shoe={currShoe} onClickAdd={addToCart} />
       </div>
       <NewArrivalSection onClickCard={setCurrShoe} />
     </div>
