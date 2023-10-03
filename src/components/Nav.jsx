@@ -31,22 +31,23 @@ export function Nav({ onClickShoppingBtn, cartItems }) {
   const menuList = (
     // lg:pl-8 to counter the mr-8 on the shopping button
     <div
-      className={` ${
+      className={`mb-4 w-full lg:mb-0 lg:block lg:w-auto lg:pl-8 ${
         !showMobileMenu && "hidden"
-      } mb-5 w-full  lg:block lg:w-auto lg:pl-8`}
+      }`}
     >
-      <ul className="mt-4 flex flex-col rounded-lg border border-gray-100 bg-gray-50 p-4 text-lg dark:border-gray-700 dark:bg-gray-800 lg:mt-0 lg:flex-row lg:space-x-8 lg:border-0 lg:bg-transparent lg:p-0 lg:dark:bg-night-50">
+      <ul className=" flex flex-col rounded-lg border border-gray-100 bg-gray-50 p-4 text-lg dark:border-gray-700 dark:bg-gray-800  lg:flex-row lg:space-x-8 lg:border-0 lg:bg-transparent lg:p-0 lg:dark:bg-transparent">
         {ROUTES.map((route, i) => (
           <li key={route} className="px-5 py-1">
             <a
               href="#"
-              className={`${
-                i == 0 && "bg-blue-500 text-white lg:bg-transparent"
-              } block py-2 pl-3 pr-4 text-black ${
-                i > 2 ? "lg:text-white" : "lg:text-black"
-              } rounded ${
-                i > 0 && "hover:bg-gray-100 lg:hover:bg-transparent"
-              } dark:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:border-0 lg:p-0 
+              className={`  
+              ${
+                i == 0 &&
+                "bg-blue-500 text-white lg:bg-transparent lg:text-black"
+              }
+              ${i > 2 && "lg:text-white"} 
+              ${i > 0 && "hover:bg-gray-100 lg:hover:bg-transparent"}
+              block  rounded py-2 pl-3 pr-4 text-black   dark:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:border-0 lg:p-0 
               lg:hover:text-blue-700 lg:dark:hover:bg-transparent lg:dark:hover:text-blue-500`}
             >
               {route}
@@ -89,10 +90,7 @@ export function Nav({ onClickShoppingBtn, cartItems }) {
   );
 
   const toggleThemeMode = () => {
-    if (
-      localStorage.getItem("theme") !== "dark" ||
-      window.matchMedia("(prefers-color-scheme: dark)").matches
-    ) {
+    if (localStorage.getItem("theme") !== "dark") {
       localStorage.setItem("theme", "dark");
       document.documentElement.classList.add("dark");
       setTheme("dark");
@@ -113,7 +111,7 @@ export function Nav({ onClickShoppingBtn, cartItems }) {
       <div className="fixed bottom-4 right-4">
         <button
           onClick={toggleThemeMode}
-          className="rounded-full bg-night px-4 py-2 font-semibold text-white shadow-lg  dark:bg-white dark:text-night"
+          className="rounded-full bg-night-50 px-4 py-2 font-semibold text-white shadow-lg  dark:bg-white dark:text-night"
         >
           {!theme || theme === "light" ? <BiMoon /> : <BiSun />}
         </button>

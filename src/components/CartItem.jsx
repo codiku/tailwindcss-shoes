@@ -1,12 +1,12 @@
 import { CiTrash } from "react-icons/ci";
-import { Select } from "./Select";
 import { QTY, SIZES } from "../constant";
+import { Select } from "./Select";
 export const CartItem = ({
   cartItem: { product, qty, size },
   onClickTrash,
 }) => {
   return (
-    <div className="flex cursor-pointer justify-between p-3 hover:bg-paleYellow">
+    <div className="flex cursor-pointer justify-between p-3 hover:bg-paleYellow dark:hover:bg-night-50">
       <img className="mt-1 h-24 bg-gray-50 " src={product.src} />
       <div className="w-72 space-y-2">
         <div className="font-bold">{product.title}</div>
@@ -22,7 +22,7 @@ export const CartItem = ({
               <Select title={size} options={SIZES} className={"w-14 p-1"} />
             </div>
             <button className="mt-2" onClick={onClickTrash}>
-              <CiTrash size={25} color="black" />
+              <CiTrash size={25} className="text-blacke dark:text-white" />
             </button>
           </div>
         </div>

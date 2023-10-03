@@ -2,13 +2,13 @@ export const Sidebar = ({ isOpen, onClickClose, children }) => {
   return (
     <>
       <div
-        className={`fixed right-0 top-0 z-50 h-full w-[30%] transform overflow-auto bg-white  p-5 shadow-lg transition duration-300 ${
+        className={`fixed right-0 top-0 z-50 h-full w-[30%] transform overflow-auto bg-white p-5 shadow-lg transition duration-300 dark:bg-night dark:text-white ${
           isOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
         <button
           onClick={onClickClose}
-          className="absolute right-4 top-4  rounded-full p-2 text-black hover:text-gray-800"
+          className="absolute right-4 top-4  rounded-full p-2 text-black hover:text-gray-800 dark:text-white"
         >
           X
         </button>

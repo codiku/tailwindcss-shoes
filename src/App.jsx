@@ -51,7 +51,7 @@ function App() {
   };
 
   return (
-    <div className="1000 animate-fadeIn p-8 dark:bg-night  xl:px-24">
+    <div className="1000 animate-fadeIn p-10 dark:bg-night  xl:px-24">
       <Nav onClickShoppingBtn={toggleSidebar} cartItems={cartItems} />
       <Sidebar onClickClose={toggleSidebar} isOpen={isSidebarOpen}>
         <Cart cartItems={cartItems} onClickTrash={removeFromCart} />

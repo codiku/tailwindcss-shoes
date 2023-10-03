@@ -2,13 +2,13 @@ import { IoIosArrowDown } from "react-icons/io";
 import { twMerge } from "tailwind-merge";
 export function Select({ title, onChange, options, isDisabled, className }) {
   return (
-    <div className=" text-black">
+    <div className=" relative text-black">
       <select
         disabled={isDisabled}
         onChange={(e) => onChange(e.target.value)}
         defaultValue=""
         className={twMerge(
-          `w-24 appearance-none border border-gray-300 bg-white  p-4  focus:border-gray-500 ${className}`,
+          ` w-24 appearance-none border border-gray-300 bg-white  p-4  focus:border-gray-500 ${className}`,
         )}
       >
         <option value="" hidden disabled>
