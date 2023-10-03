@@ -33,17 +33,19 @@ function App() {
   };
 
   const addToCart = (product, qty, size) => {
-    const existingItemIndex = cartItems.findIndex(
-      (c) => c.product.id === product.id,
-    );
-    const updateCartItems = [...cartItems];
-    if (existingItemIndex > -1) {
-      updateCartItems[existingItemIndex].qty = qty;
-      updateCartItems[existingItemIndex].size = size;
-    } else {
-      updateCartItems.push({ product, qty: qty, size: size });
+    if (qty && size) {
+      const existingItemIndex = cartItems.findIndex(
+        (c) => c.product.id === product.id,
+      );
+      const updateCartItems = [...cartItems];
+      if (existingItemIndex > -1) {
+        updateCartItems[existingItemIndex].qty = qty;
+        updateCartItems[existingItemIndex].size = size;
+      } else {
+        updateCartItems.push({ product, qty: qty, size: size });
+      }
+      setCartItems(updateCartItems);
     }
-    setCartItems(updateCartItems);
   };
 
   const toggleSidebar = () => {

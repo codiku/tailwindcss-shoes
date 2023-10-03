@@ -35,20 +35,20 @@ export function Nav({ onClickShoppingBtn, cartItems }) {
         !showMobileMenu && "hidden"
       }`}
     >
-      <ul className=" flex flex-col rounded-lg border border-gray-100 bg-gray-50 p-4 text-lg dark:border-gray-700 dark:bg-gray-800  lg:flex-row lg:space-x-8 lg:border-0 lg:bg-transparent lg:p-0 lg:dark:bg-transparent">
+      <ul className="flex flex-col rounded-lg border border-gray-100 bg-gray-50 p-4 text-lg dark:border-gray-700 dark:bg-gray-800 lg:flex-row  lg:space-x-8 lg:border-0 lg:bg-transparent lg:p-0 lg:dark:bg-transparent ">
         {ROUTES.map((route, i) => (
-          <li key={route} className="px-5 py-1">
+          <li key={route} className="px-5 py-1 [&:nth-child(1)]:text-red-400">
             <a
               href="#"
-              className={`  
-              ${
+              className={`${
                 i == 0 &&
                 "bg-blue-500 text-white lg:bg-transparent lg:text-black"
               }
               ${i > 2 && "lg:text-white"} 
               ${i > 0 && "hover:bg-gray-100 lg:hover:bg-transparent"}
-              block  rounded py-2 pl-3 pr-4 text-black   dark:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:border-0 lg:p-0 
-              lg:hover:text-blue-700 lg:dark:hover:bg-transparent lg:dark:hover:text-blue-500`}
+              block rounded py-2 pl-3 pr-4 text-black   dark:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:border-0 lg:p-0 
+              lg:hover:text-blue-700 lg:dark:hover:bg-transparent lg:dark:hover:text-blue-500
+`}
             >
               {route}
             </a>
@@ -71,7 +71,7 @@ export function Nav({ onClickShoppingBtn, cartItems }) {
   const buttonShopping = (
     <div
       onClick={onClickShoppingBtn}
-      className="mr-8 hidden h-12 w-12 lg:block"
+      className="fixed bottom-4 left-4 mr-8 h-12 w-12 lg:static"
     >
       <div className="anim-click flex-center h-full w-full cursor-pointer rounded-full bg-white shadow-sm ">
         <TbShoppingBag size={15} />
@@ -119,3 +119,8 @@ export function Nav({ onClickShoppingBtn, cartItems }) {
     </nav>
   );
 }
+
+/*
+
+ 
+              */

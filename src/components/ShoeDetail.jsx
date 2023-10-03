@@ -25,8 +25,9 @@ export const ShoeDetail = ({ shoe, onClickAdd }) => {
       </div>
       <div className="flex items-center space-x-10">
         <button
+          disabled={!qty || !size}
           onClick={() => onClickAdd(shoe, qty, size)}
-          className="anim-click flex-center h-14 w-44  bg-black text-white hover:bg-gray-900 active:bg-gray-700 dark:bg-white dark:text-black dark:hover:bg-night-50  dark:hover:text-white"
+          className="anim-click flex-center h-14 w-44 bg-black text-white  hover:bg-gray-900 active:bg-gray-700 disabled:animate-none disabled:bg-opacity-25 dark:bg-white dark:text-black dark:hover:bg-night-50  dark:hover:text-white"
         >
           Add to bag
         </button>

@@ -1,7 +1,7 @@
-import nike1 from "./assets/n1.png";
-import nike2 from "./assets/n2.png";
-import nike3 from "./assets/n3.png";
-import nike4 from "./assets/n4.png";
+import nike1 from "./assets/n1-min.png";
+import nike2 from "./assets/n2-min.png";
+import nike3 from "./assets/n3-min.png";
+import nike4 from "./assets/n4-min.png";
 
 export const SHOE_LIST = [
   {
