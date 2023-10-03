@@ -37,7 +37,7 @@ export function Nav({ onClickShoppingBtn, cartItems }) {
     >
       <ul className="flex flex-col rounded-lg border border-gray-100 bg-gray-50 p-4 text-lg dark:border-gray-700 dark:bg-gray-800 lg:flex-row  lg:space-x-8 lg:border-0 lg:bg-transparent lg:p-0 lg:dark:bg-transparent ">
         {ROUTES.map((route, i) => (
-          <li key={route} className="px-5 py-1 [&:nth-child(1)]:text-red-400">
+          <li key={route} className=" py-1 [&:nth-child(1)]:text-red-400">
             <a
               href="#"
               className={`${
