@@ -9,11 +9,11 @@ export const CartItem = ({
   const inputs = (
     <div className="flex  justify-between gap-2 pl-32">
       <div className="flex gap-6">
-        <div className="mt-2 items-baseline gap-2">
+        <div className="mt-2 items-baseline space-y-1">
           <div className="font-bold">QTY</div>
           <Select title={qty} options={QTY} className={"w-16 p-1"} />
         </div>
-        <div className="mt-2  items-baseline gap-2">
+        <div className="mt-2  items-baseline space-y-1">
           <div className="font-bold">SIZE</div>
           <Select title={size} options={SIZES} className={"w-16 p-1"} />
         </div>
@@ -24,7 +24,7 @@ export const CartItem = ({
     </div>
   );
   return (
-    <div className="flex-col p-2 hover:bg-paleYellow dark:hover:bg-night-50">
+    <div className="flex-col p-2 hover:bg-paleGreen dark:hover:bg-night-50">
       <div className="flex cursor-pointer  justify-between gap-2 whitespace-pre-wrap ">
         <img className="mt-1 h-24 bg-gray-50 " src={product.src} />
         <div className="space-y-2">
