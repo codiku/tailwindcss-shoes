@@ -5,7 +5,7 @@ import { QTY, SIZES } from "../constant";
 export const ShoeDetail = ({ shoe, onClickAdd }) => {
   const [qty, setQty] = useState();
   const [size, setSize] = useState();
-
+  const isBtnDisabled = !qty || !size;
   const shoeImage = (
     <div className="flex-center relative h-[100%] bg-gradient-to-br from-[#F637CF] from-5% via-[#E3D876] via-40% to-[#4CC4C6] to-90%">
       <img className="animate-float" src={shoe.src} />
@@ -25,9 +25,11 @@ export const ShoeDetail = ({ shoe, onClickAdd }) => {
       </div>
       <div className="flex items-center space-x-10">
         <button
-          disabled={!qty || !size}
+          disabled={isBtnDisabled}
           onClick={() => onClickAdd(shoe, qty, size)}
-          className="anim-click flex-center h-14 w-44 bg-black text-white  hover:bg-gray-900 active:bg-gray-700 disabled:animate-none disabled:bg-opacity-25 dark:bg-white dark:text-black dark:hover:bg-night-50  dark:hover:text-white"
+          className={`${
+            !isBtnDisabled && "anim-click"
+          } flex-center h-14 w-44 bg-black text-white  hover:bg-gray-900 enabled:active:bg-gray-700 disabled:animate-none dark:bg-white dark:text-black dark:hover:bg-night-50  dark:hover:text-white`}
         >
           Add to bag
         </button>
