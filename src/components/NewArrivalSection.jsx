@@ -5,7 +5,7 @@ export const NewArrivalSection = ({ onClickCard }) => {
   return (
     <>
       <div className="flex-center  mt-20 flex-col dark:text-white">
-        <div className="w-fit overflow-hidden  bg-[url('./assets/lines.png')] bg-center bg-no-repeat text-4xl font-extrabold">
+        <div className="w-fit overflow-hidden  bg-[url('./assets/lines.png')] bg-center bg-no-repeat text-2xl font-extrabold">
           NEW ARRIVALS
         </div>
       </div>
