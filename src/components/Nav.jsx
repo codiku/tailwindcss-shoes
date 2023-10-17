@@ -36,7 +36,7 @@ export function Nav() {
           isMobileMenuShown && "hidden"
         } w-full lg:block lg:w-auto`}
       >
-        <ul className="flex flex-col rounded-lg border  border-gray-100 bg-gray-50 p-4 text-lg lg:flex-row lg:border-none lg:bg-transparent ">
+        <ul className="flex flex-col rounded-lg border  border-gray-100 bg-gray-50 p-4 text-lg lg:flex-row lg:space-x-8 lg:border-none  lg:bg-transparent">
           {ROUTES.map((route, i) => {
             return (
               <li
