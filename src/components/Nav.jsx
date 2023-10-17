@@ -13,8 +13,6 @@ const ROUTES = [
 export function Nav() {
   const [isMobileMenuShown, setIsMobileMenuShown] =
     useState(false);
-
-  console.log("***", isMobileMenuShown);
   return (
     <nav className="flex flex-wrap items-center justify-between">
       {/* Logo */}
@@ -33,16 +31,16 @@ export function Nav() {
       {/* Menu list */}
       <div
         className={`${
-          !isMobileMenuShown && "hidden"
+          isMobileMenuShown === false && "hidden"
         } w-full lg:block lg:w-auto`}
       >
-        <ul className="flex flex-col rounded-lg border  border-gray-100 bg-gray-50 p-4 text-lg lg:flex-row lg:space-x-8 lg:border-none  lg:bg-transparent">
+        <ul className="flex flex-col rounded-lg border border-gray-100 bg-gray-50 p-4 text-lg lg:flex-row lg:space-x-8 lg:border-none lg:bg-transparent">
           {ROUTES.map((route, i) => {
             return (
               <li
                 className={`cursor-pointer rounded px-3 py-2 ${
                   i === 0
-                    ? "bg-blue-500 text-white lg:bg-transparent lg:text-blue-500"
+                    ? "bg-blue-500 text-white lg:bg-transparent lg:text-blue-500 "
                     : "hover:bg-gray-100"
                 }`}
                 key={route}
@@ -54,10 +52,10 @@ export function Nav() {
         </ul>
       </div>
 
-      {/* Cart button  */}
-      <div className="fixed bottom-4 left-4 h-12 w-12 lg:static ">
-        <div className="flex-center h-full w-full cursor-pointer rounded-full bg-white shadow-md">
-          <TbShoppingBag size={15} />
+      {/* Cart button */}
+      <div className="fixed bottom-4 left-4 lg:static">
+        <div className="flex-center h-12 w-12 rounded-full bg-white shadow-md">
+          <TbShoppingBag />
         </div>
       </div>
     </nav>
