@@ -10,11 +10,9 @@ export function Nav() {
       <a href="#" className="flex items-center">
         <NikeLogo className="h-20 w-20" />
       </a>
+
       {/* Burger button */}
-      <button
-        type="button"
-        className="h-10 w-10 rounded-lg p-2 text-sm text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
-      >
+      <button className="h-10 w-10 rounded-lg p-2 text-sm text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200">
         <RxHamburgerMenu size={"auto"} />
       </button>
 
@@ -27,7 +25,7 @@ export function Nav() {
                 href="#"
                 className={`${i == 0 && "bg-blue-500 text-white "}
               ${i > 0 && "hover:bg-gray-100"}
-              block rounded py-2 pl-3 pr-4  text-black `}
+              block rounded px-3 py-2`}
               >
                 {route}
               </a>
