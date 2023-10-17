@@ -1,6 +1,5 @@
 {
-  "plugins": [
-    "prettier-plugin-tailwindcss"
-  ],
-  "pluginSearchDirs": false
+  "plugins": ["prettier-plugin-tailwindcss"],
+  "pluginSearchDirs": false,
+  "printWidth": 66
 }
