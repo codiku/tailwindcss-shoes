@@ -3,12 +3,17 @@ import nike1 from "../assets/n1-min.png";
 export function ShoeDetail() {
   return (
     <div className="flex flex-col space-y-4 lg:flex-row-reverse">
-      <div className="flex-1 ">
-        <img src={nike1} />
+      {/* Shoe image */}
+      <div className="flex-1 lg:-mt-32  lg:ml-28 ">
+        <div className="flex-center  h-[100%] bg-gradient-to-br from-[#F637CF] from-5% via-[#E3D876] via-40% to-[#4CC4C6] to-90%">
+          <img src={nike1} />
+        </div>
       </div>
+
       <div className="flex-1 space-y-6">
+        {/* Shoe text details */}
         <div className="text-5xl font-black md:text-9xl">
-          Nike Air max 270
+          Nike Air Max 270
         </div>
         <div className="font-medium md:text-xl">
           {
@@ -18,6 +23,7 @@ export function ShoeDetail() {
         <div className="text-3xl font-extrabold md:text-6xl">
           100 $
         </div>
+        {/* Shoe buttons and link */}
         <div className="space-x-10">
           <button className="h-14 w-44 bg-black text-white hover:bg-gray-900 active:bg-gray-700">
             Add to bag
