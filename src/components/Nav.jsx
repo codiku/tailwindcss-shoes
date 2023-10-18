@@ -40,7 +40,7 @@ export function Nav() {
               <li
                 className={`cursor-pointer rounded px-3 py-2 lg:hover:bg-transparent lg:hover:text-blue-500 ${
                   i === 0
-                    ? "bg-blue-500 text-white lg:text-blue-500 "
+                    ? "bg-blue-500 text-white lg:bg-transparent lg:text-blue-500 "
                     : "hover:bg-gray-100"
                 } ${(i == 3 || i == 4) && "lg:text-white"}`}
                 key={route}
