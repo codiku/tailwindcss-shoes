@@ -1,4 +1,6 @@
 import nike1 from "../assets/n1-min.png";
+import { QTY, SIZES } from "../constant";
+import { Select } from "./Select";
 
 export function ShoeDetail() {
   return (
@@ -19,8 +21,12 @@ export function ShoeDetail() {
             "The Nike Air Max 270 is a lifestyle shoe that's sure to turn heads with its vibrant color gradient."
           }
         </div>
-        <div className="text-3xl font-extrabold md:text-6xl">
-          100 $
+        <div className="flex items-center space-x-6">
+          <div className="text-3xl font-extrabold md:text-6xl">
+            100 $
+          </div>
+          <Select options={QTY} title="QTY" />
+          <Select title="SIZE" options={SIZES} />
         </div>
 
         {/* Shoe buttons and links */}
