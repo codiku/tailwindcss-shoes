@@ -38,7 +38,7 @@ export function Nav() {
           {ROUTES.map((route, i) => {
             return (
               <li
-                className={`cursor-pointer rounded px-3 py-2 lg:bg-transparent lg:hover:bg-transparent ${
+                className={`cursor-pointer rounded px-3 py-2 lg:bg-transparent lg:hover:bg-transparent lg:hover:text-blue-500 ${
                   i === 0
                     ? "bg-blue-500 text-white lg:text-blue-500 "
                     : "hover:bg-gray-100"
