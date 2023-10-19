@@ -18,9 +18,9 @@ export function App() {
         onClickClose={() => setIsSidebarOpen(false)}
       >
         <h2 className="mb-10 text-2xl font-bold">Cart</h2>
-        <CartItem item={SHOE_LIST[0]} />
-        <CartItem item={SHOE_LIST[2]} />
-        <CartItem item={SHOE_LIST[3]} />
+        <CartItem item={SHOE_LIST[0]} qty={1} size={44} />
+        <CartItem item={SHOE_LIST[2]} qty={1} size={44} />
+        <CartItem item={SHOE_LIST[3]} qty={1} size={44} />
       </Sidebar>
     </div>
   );
