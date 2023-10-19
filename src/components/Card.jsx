@@ -10,7 +10,7 @@ export function Card({ item }) {
         </div>
       </div>
       <img
-        className="absolute left-[40%] top-5 h-40 w-56"
+        className="absolute left-[50%] top-5 h-40"
         src={item.src}
       />
     </div>
