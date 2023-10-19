@@ -21,6 +21,9 @@ export function App() {
         <CartItem item={SHOE_LIST[0]} qty={1} size={44} />
         <CartItem item={SHOE_LIST[2]} qty={1} size={44} />
         <CartItem item={SHOE_LIST[3]} qty={1} size={44} />
+        <CartItem item={SHOE_LIST[3]} qty={1} size={44} />
+        <CartItem item={SHOE_LIST[3]} qty={1} size={44} />
+        <CartItem item={SHOE_LIST[3]} qty={1} size={44} />
       </Sidebar>
     </div>
   );
