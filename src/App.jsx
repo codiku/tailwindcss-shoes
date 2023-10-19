@@ -1,5 +1,5 @@
 import { Nav } from "./components/Nav";
-import { NewArrivalSection } from "./components/NewArrivalSection";
+import { NewArrivalsSection } from "./components/NewArrivalsSection";
 import { ShoeDetail } from "./components/ShoeDetail";
 import { SHOE_LIST } from "./constant";
 
@@ -8,7 +8,7 @@ export function App() {
     <div className="animate-fadeIn p-10 xl:px-24">
       <Nav />
       <ShoeDetail />
-      <NewArrivalSection items={SHOE_LIST} />
+      <NewArrivalsSection items={SHOE_LIST} />
     </div>
   );
 }
