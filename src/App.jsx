@@ -16,7 +16,7 @@ export function App() {
         isOpen={isSidebarOpen}
         onClickClose={() => setIsSidebarOpen(false)}
       >
-        Hello
+        Hi
       </Sidebar>
     </div>
   );
