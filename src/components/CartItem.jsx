@@ -3,7 +3,11 @@ import { Select } from "../components/Select";
 import { SIZES, QTY } from "../constant";
 export function CartItem({ item }) {
   return (
-    <div className="cursor-pointer space-y-2 bg-gray-50 p-2 hover:bg-[#DAFFA2]">
+    <div
+      className={
+        "cursor-pointer space-y-2 bg-gray-50 p-2 hover:bg-[#DAFFA2]"
+      }
+    >
       <div className="flex  space-x-2 ">
         {/* Image */}
         <img className="h-24" src={item.src} />
@@ -22,11 +26,19 @@ export function CartItem({ item }) {
         <div className="flex space-x-6">
           <div>
             <div className="font-bold">SIZE</div>
-            <Select title="" options={SIZES} />
+            <Select
+              title=""
+              options={SIZES}
+              className={"w-16 p-1"}
+            />
           </div>
           <div>
             <div className="font-bold">QTY</div>
-            <Select title="" options={QTY} />
+            <Select
+              title=""
+              options={QTY}
+              className={"w-16 p-1"}
+            />
           </div>
         </div>
         <button>
