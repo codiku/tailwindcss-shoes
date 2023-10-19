@@ -12,4 +12,7 @@
   .flex-center {
     @apply flex items-center justify-center;
   }
+  .btn-anim {
+    @apply transition active:scale-75;
+  }
 }
