@@ -12,7 +12,6 @@ export function App() {
   const [currentShoe, setCurrentShoe] = useState(SHOE_LIST[0]);
   const [cartItems, setCartItems] = useState([]);
 
-  console.log("***", cartItems);
   useEffect(() => {
     const isDarkMode = localStorage.getItem("isDarkMode");
     if (isDarkMode === "true") {
@@ -30,20 +29,20 @@ export function App() {
 
   const addToCart = (product, qty, size) => {
     if (qty && size) {
-      const existingItemIndex = cartItems.findIndex(
-        (c) => c.product.id === product.id,
-      );
       const updatedCartItems = [...cartItems];
+      const existingItemIndex = cartItems.findIndex(
+        (item) => item.product.id === product.id,
+      );
       if (existingItemIndex > -1) {
         updatedCartItems[existingItemIndex].qty = qty;
         updatedCartItems[existingItemIndex].size = size;
       } else {
-        updatedCartItems.push({ product, qty: qty, size: size });
+        updatedCartItems.push({ product, qty, size });
       }
+
       setCartItems(updatedCartItems);
     }
   };
-
   return (
     <div className="dark:bg-night animate-fadeIn p-10 xl:px-24">
       <Nav onClickShoppingBtn={() => setIsSidebarOpen(true)} />
