@@ -6,8 +6,6 @@ import { Sidebar } from "./components/Sidebar";
 import { SHOE_LIST } from "./constant";
 import { Cart } from "./components/Cart";
 import { BiMoon, BiSun } from "react-icons/bi";
-import { document } from "postcss";
-
 const FAKE_CART_ITEMS = SHOE_LIST.map((shoe) => {
   return {
     product: shoe,
@@ -17,6 +15,7 @@ const FAKE_CART_ITEMS = SHOE_LIST.map((shoe) => {
 });
 
 export function App() {
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   useEffect(() => {
     const isDarkMode = localStorage.getItem("isDarkMode");
     if (isDarkMode === "true") {
@@ -24,18 +23,13 @@ export function App() {
     }
   }, []);
 
-  const toggleThemeMode = () => {
+  const toggleDarkMode = () => {
     window.document.documentElement.classList.toggle("dark");
-
     localStorage.setItem(
       "isDarkMode",
-      window.document.documentElement.classList.contains("dark")
-        ? "true"
-        : "false",
+      window.document.documentElement.classList.contains("dark"),
     );
   };
-
-  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   return (
     <div className="animate-fadeIn p-10 xl:px-24">
       <Nav onClickShoppingBtn={() => setIsSidebarOpen(true)} />
@@ -47,14 +41,13 @@ export function App() {
       >
         <Cart cartItems={FAKE_CART_ITEMS} />
       </Sidebar>
-      {/* Dark mode button */}
-      <div className="fixed bottom-4 right-4">
+      <div className=" fixed bottom-4 right-4">
         <button
-          onClick={toggleThemeMode}
-          className="bg-night-50 dark:text-night-500 rounded-full px-4 py-2 font-semibold text-white shadow-lg dark:bg-white"
+          onClick={toggleDarkMode}
+          className="bg-night-50 dark:text-night rounded-full px-4 py-2 text-white shadow-lg dark:bg-white"
         >
           <BiSun className="hidden dark:block" />
-          <BiMoon className="block dark:hidden" />
+          <BiMoon className="dark:hidden" />
         </button>
       </div>
     </div>
