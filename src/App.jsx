@@ -5,6 +5,7 @@ import { ShoeDetail } from "./components/ShoeDetail";
 import { Sidebar } from "./components/Sidebar";
 import { SHOE_LIST } from "./constant";
 import { Cart } from "./components/Cart";
+import { BiMoon, BiSun } from "react-icons/bi";
 
 const FAKE_CART_ITEMS = SHOE_LIST.map((shoe) => {
   return {
@@ -15,6 +16,10 @@ const FAKE_CART_ITEMS = SHOE_LIST.map((shoe) => {
 });
 
 export function App() {
+  const toggleThemeMode = () => {
+    document.documentElement.classList.toggle("dark");
+  };
+
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   return (
     <div className="animate-fadeIn p-10 xl:px-24">
@@ -27,6 +32,15 @@ export function App() {
       >
         <Cart cartItems={FAKE_CART_ITEMS} />
       </Sidebar>
+      <div className="fixed bottom-4 right-4">
+        <button
+          onClick={toggleThemeMode}
+          className="bg-night-50 dark:text-night-500 rounded-full px-4 py-2 font-semibold text-white shadow-lg dark:bg-white"
+        >
+          <BiSun className="hidden dark:block" />
+          <BiMoon className="block dark:hidden" />
+        </button>
+      </div>
     </div>
   );
 }
