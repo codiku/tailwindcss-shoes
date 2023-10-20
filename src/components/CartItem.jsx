@@ -30,7 +30,7 @@ export function CartItem({ item: { product, qty, size } }) {
               defaultValue={size}
               title=""
               options={SIZES}
-              className={"w-16  p-1 pl-2"}
+              className={"w-16 p-1 pl-2"}
             />
           </div>
           <div>
