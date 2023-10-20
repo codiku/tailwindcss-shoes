@@ -1,10 +1,9 @@
-import { useRef, useState } from "react";
+import { useState } from "react";
 import { QTY, SIZES } from "../constant";
 import { Select } from "./Select";
 
 export function ShoeDetail({ shoe, onClickAdd }) {
   const [form, setForm] = useState({ qty: null, size: null });
-  console.log("*** form", form);
 
   return (
     <div className="flex flex-col space-y-4 dark:text-white lg:flex-row-reverse">
