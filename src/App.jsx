@@ -4,7 +4,7 @@ import { NewArrivalsSection } from "./components/NewArrivalsSection";
 import { ShoeDetail } from "./components/ShoeDetail";
 import { Sidebar } from "./components/Sidebar";
 import { SHOE_LIST } from "./constant";
-import { Cart } from "./components/Cart";
+import { CartItem } from "./components/CartItem";
 
 export function App() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -17,7 +17,13 @@ export function App() {
         isOpen={isSidebarOpen}
         onClickClose={() => setIsSidebarOpen(false)}
       >
-        <Cart items={SHOE_LIST} />
+        <h2 className="mb-10 text-2xl font-bold">Cart</h2>
+        <CartItem item={SHOE_LIST[0]} qty={1} size={44} />
+        <CartItem item={SHOE_LIST[2]} qty={1} size={44} />
+        <CartItem item={SHOE_LIST[3]} qty={1} size={44} />
+        <CartItem item={SHOE_LIST[3]} qty={1} size={44} />
+        <CartItem item={SHOE_LIST[3]} qty={1} size={44} />
+        <CartItem item={SHOE_LIST[3]} qty={1} size={44} />
       </Sidebar>
     </div>
   );
