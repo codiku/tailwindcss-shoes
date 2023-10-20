@@ -4,12 +4,14 @@ export function Select({
   title,
   options,
   className,
-  defaultValue,
+  value,
+  onChange,
 }) {
   return (
     <div className="relative dark:text-black">
       <select
-        defaultValue={defaultValue || ""}
+        onChange={(e) => onChange?.(e.target.value)}
+        value={value || ""}
         className={twMerge(
           `w-24 appearance-none border border-gray-300 bg-white p-4  ${className}`,
         )}

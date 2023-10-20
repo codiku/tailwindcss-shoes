@@ -10,6 +10,9 @@ import { BiMoon, BiSun } from "react-icons/bi";
 export function App() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [currentShoe, setCurrentShoe] = useState(SHOE_LIST[0]);
+  const [cartItems, setCartItems] = useState([]);
+
+  console.log("***", cartItems);
   useEffect(() => {
     const isDarkMode = localStorage.getItem("isDarkMode");
     if (isDarkMode === "true") {
@@ -24,10 +27,27 @@ export function App() {
       window.document.documentElement.classList.contains("dark"),
     );
   };
+
+  const addToCart = (product, qty, size) => {
+    if (qty && size) {
+      const existingItemIndex = cartItems.findIndex(
+        (c) => c.product.id === product.id,
+      );
+      const updatedCartItems = [...cartItems];
+      if (existingItemIndex > -1) {
+        updatedCartItems[existingItemIndex].qty = qty;
+        updatedCartItems[existingItemIndex].size = size;
+      } else {
+        updatedCartItems.push({ product, qty: qty, size: size });
+      }
+      setCartItems(updatedCartItems);
+    }
+  };
+
   return (
     <div className="dark:bg-night animate-fadeIn p-10 xl:px-24">
       <Nav onClickShoppingBtn={() => setIsSidebarOpen(true)} />
-      <ShoeDetail shoe={currentShoe} />
+      <ShoeDetail shoe={currentShoe} onClickAdd={addToCart} />
       <NewArrivalsSection
         items={SHOE_LIST}
         onClickCard={setCurrentShoe}
@@ -36,7 +56,7 @@ export function App() {
         isOpen={isSidebarOpen}
         onClickClose={() => setIsSidebarOpen(false)}
       >
-        <Cart cartItems={[]} />
+        <Cart cartItems={cartItems} />
       </Sidebar>
       <div className=" fixed bottom-4 right-4">
         <button
