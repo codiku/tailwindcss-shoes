@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Nav } from "./components/Nav";
 import { NewArrivalsSection } from "./components/NewArrivalsSection";
 import { ShoeDetail } from "./components/ShoeDetail";
@@ -6,6 +6,7 @@ import { Sidebar } from "./components/Sidebar";
 import { SHOE_LIST } from "./constant";
 import { Cart } from "./components/Cart";
 import { BiMoon, BiSun } from "react-icons/bi";
+import { document } from "postcss";
 
 const FAKE_CART_ITEMS = SHOE_LIST.map((shoe) => {
   return {
@@ -16,8 +17,22 @@ const FAKE_CART_ITEMS = SHOE_LIST.map((shoe) => {
 });
 
 export function App() {
+  useEffect(() => {
+    const isDarkMode = localStorage.getItem("isDarkMode");
+    if (isDarkMode === "true") {
+      window.document.documentElement.classList.add("dark");
+    }
+  }, []);
+
   const toggleThemeMode = () => {
-    document.documentElement.classList.toggle("dark");
+    window.document.documentElement.classList.toggle("dark");
+
+    localStorage.setItem(
+      "isDarkMode",
+      window.document.documentElement.classList.contains("dark")
+        ? "true"
+        : "false",
+    );
   };
 
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -32,6 +47,7 @@ export function App() {
       >
         <Cart cartItems={FAKE_CART_ITEMS} />
       </Sidebar>
+      {/* Dark mode button */}
       <div className="fixed bottom-4 right-4">
         <button
           onClick={toggleThemeMode}
