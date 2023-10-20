@@ -8,9 +8,8 @@ import { Cart } from "./components/Cart";
 import { BiMoon, BiSun } from "react-icons/bi";
 
 export function App() {
-  const [currShoe, setCurrShoe] = useState(SHOE_LIST[0]);
-
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const [currentShoe, setCurrentShoe] = useState(SHOE_LIST[0]);
   useEffect(() => {
     const isDarkMode = localStorage.getItem("isDarkMode");
     if (isDarkMode === "true") {
@@ -28,10 +27,10 @@ export function App() {
   return (
     <div className="dark:bg-night animate-fadeIn p-10 xl:px-24">
       <Nav onClickShoppingBtn={() => setIsSidebarOpen(true)} />
-      <ShoeDetail shoe={currShoe} />
+      <ShoeDetail shoe={currentShoe} />
       <NewArrivalsSection
         items={SHOE_LIST}
-        onClickCard={setCurrShoe}
+        onClickCard={setCurrentShoe}
       />
       <Sidebar
         isOpen={isSidebarOpen}
