@@ -6,6 +6,13 @@ import { Sidebar } from "./components/Sidebar";
 import { SHOE_LIST } from "./constant";
 import { Cart } from "./components/Cart";
 
+const CART_ITEMS = SHOE_LIST.map((shoe) => {
+  return {
+    product: shoe,
+    qty: 1,
+    size: 44,
+  };
+});
 export function App() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   return (
@@ -17,7 +24,7 @@ export function App() {
         isOpen={isSidebarOpen}
         onClickClose={() => setIsSidebarOpen(false)}
       >
-        <Cart items={SHOE_LIST} />
+        <Cart cartItems={CART_ITEMS} />
       </Sidebar>
     </div>
   );
