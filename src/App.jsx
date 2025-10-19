@@ -1,7 +1,7 @@
 import { Nav } from "./components/Nav";
-import { ShoeDetail } from "./components/ShoeDetail";
+import { ShoeDetail } from "./components/ShoeDetail.jsx";
 
-export function App() {
+export default function App() {
   return (
     <div className="animate-fadeIn p-10 xl:px-24">
       <Nav />
